@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Gaegu:wght@400;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SCREEN 1: Hello there -->
+<section class="screen hello" id="s0">
+  <svg class="flower fl-left" viewBox="0 0 100 160"><use href="#bloom" style="color:#a31621"/></svg>
+  <svg class="flower fl-right" viewBox="0 0 100 160"><use href="#bloom" style="color:#e29a8f"/></svg>
+
+  <svg class="cat" viewBox="0 0 80 90" aria-hidden="true">
+    <path d="M14 30 L18 6 L34 20 Z M66 30 L62 6 L46 20 Z" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+    <ellipse cx="40" cy="38" rx="28" ry="22" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+    <path d="M28 36 q4 -4 8 0 M44 36 q4 -4 8 0" stroke="#555" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <path d="M37 44 q3 3 6 0" stroke="#555" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="24" cy="44" r="4" fill="#ffd1dc"/><circle cx="56" cy="44" r="4" fill="#ffd1dc"/>
+    <ellipse cx="40" cy="72" rx="16" ry="14" fill="#fff" stroke="#bbb" stroke-width="1.5"/>
+    <path d="M40 -2 c-4 -5 -10 0 -5 5 l5 5 l5 -5 c5 -5 -1 -10 -5 -5z" fill="#ffb3c6" transform="translate(0 2) scale(.7) translate(17 -2)"/>
+  </svg>
+
+  <h1 class="hello-title">Hello there</h1>
+  <p class="hello-name" id="helloName">Motay!</p>
+  <p class="hello-sub">your surprise starts in</p>
+  <div class="countdown" id="countdown">3</div>
+</section>
+
+<!-- SCREEN 2: Happy Birthday -->
+<section class="screen glow" id="s1">
+  <div class="emoji-big">🎂</div>
+  <h2 class="pink-title">Happy Birthday,<br><span class="who"></span> !</h2>
+  <p class="date" id="bdayDate"></p>
+  <p class="from" id="fromLine"></p>
+</section>
+
+<!-- SCREEN 3: Make a wish -->
+<section class="screen glow" id="s2">
+  <h2 class="pink-title small">Make a wish, <span class="who"></span> !</h2>
+  <button class="cake-btn" id="cake" aria-label="Light the candle">
+    <svg viewBox="0 0 240 220" class="cake">
+      <ellipse cx="120" cy="208" rx="95" ry="8" fill="#000" opacity=".06"/>
+      <rect x="30" y="140" width="180" height="60" rx="14" fill="#f48fb1"/>
+      <rect x="55" y="85" width="130" height="60" rx="12" fill="#f8bbd0"/>
+      <path d="M55 100 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 v-10 h-120z" fill="#fff"/>
+      <g fill="#ffd54f"><circle cx="70" cy="165" r="3"/><circle cx="110" cy="175" r="3"/><circle cx="150" cy="162" r="3"/><circle cx="185" cy="178" r="3"/></g>
+      <g fill="#81d4fa"><circle cx="90" cy="120" r="3"/><circle cx="135" cy="125" r="3"/><circle cx="168" cy="118" r="3"/></g>
+      <rect x="114" y="52" width="12" height="36" rx="3" fill="#ec407a"/>
+      <path id="flame" d="M120 24 c-9 10 -9 18 0 24 c9 -6 9 -14 0 -24z" fill="#ffb300"/>
+    </svg>
+  </button>
+  <p class="hint" id="wishHint">Tap the cake to light the candle 🕯️</p>
+</section>
+
+<!-- SCREEN 4: Yay -->
+<section class="screen glow" id="s3">
+  <h2 class="pink-title small">🎉 Yay, <span class="who"></span> !</h2>
+  <svg viewBox="0 0 240 220" class="cake cake-lit"><use href="#cake-static"/></svg>
+  <button class="cta" id="memBtn">See your memories 📸</button>
+</section>
+
+<!-- SCREEN 5: Memories -->
+<section class="screen memories" id="s4">
+  <span class="tulip t1">🌷</span><span class="tulip t2">🌷</span><span class="tulip t3">🌸</span>
+
+  <!-- LEFT: photos change automatically -->
+  <div class="stage">
+    <div class="polaroid back"></div>
+    <figure class="polaroid main">
+      <div class="frame" id="frame"></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <span class="heart">♥</span>
+    </figure>
+    <div class="dots" id="dots"></div>
+  </div>
+
+  <!-- RIGHT: the wish -->
+  <div class="side">
+   <div class="credits" id="credits">
+    <div class="tag">happy<br>birthday</div>
+    <article class="wish">
+    <h3>Dear Karma Motay,</h3>
+    <p>Happy Birthday, my dearest Emen! 🎂 I guess today was the day u were born into this small world to YABCHEN Norbu ad YUMCHEN Tashi.</p>
+    <p>Look at those pictures, had to use them cause they been sitting in my phone for almost a half decade  and i donot find them useful other than eating my storage.</p>
+    <p>Anyways, happy birthday! Thank you so much for everything that u have done for me tilll now, all the best for the supporting u r gooing to give me inn the near future.</p>
+    <p>Wishng u a new year full of australian dollars$$$$.</p>
+  </article>
+   </div>
+  </div>
+</section>
+
+<div id="confetti"></div>
+
+<!-- reusable SVG shapes -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="bloom">
+      <path d="M50 160 C48 120 52 90 50 60" stroke="#4d6b3a" stroke-width="4" fill="none"/>
+      <path d="M50 120 C20 110 12 90 24 80 C40 90 48 105 50 120z" fill="#6f8f4e"/>
+      <path d="M50 100 C80 92 90 72 78 64 C62 72 52 86 50 100z" fill="#6f8f4e"/>
+      <g fill="currentColor">
+        <circle cx="50" cy="40" r="18"/><circle cx="32" cy="46" r="14" opacity=".85"/><circle cx="68" cy="46" r="14" opacity=".85"/>
+        <circle cx="40" cy="28" r="14" opacity=".9"/><circle cx="60" cy="28" r="14" opacity=".9"/>
+      </g>
+      <circle cx="50" cy="40" r="6" fill="#00000030"/>
+    </g>
+    <g id="cake-static">
+      <rect x="30" y="140" width="180" height="60" rx="14" fill="#f48fb1"/>
+      <rect x="55" y="85" width="130" height="60" rx="12" fill="#f8bbd0"/>
+      <path d="M55 100 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 q10 14 20 0 v-10 h-120z" fill="#fff"/>
+      <rect x="114" y="52" width="12" height="36" rx="3" fill="#ec407a"/>
+      <path d="M120 24 c-9 10 -9 18 0 24 c9 -6 9 -14 0 -24z" fill="#ffb300"/>
+    </g>
+  </defs>
+</svg>
+
+<script src="script.js"></script>
+</body>
+</html>
